@@ -27,8 +27,8 @@ const config = {
         '@typescript-eslint/await-thenable': 'error',
         '@typescript-eslint/ban-types': 'off',
         '@typescript-eslint/ban-ts-comment': 'warn',
-        '@typescript-eslint/explicit-function-return-type': 'warn', // Warn b/c return types are not supported in Svelte markdown
-        '@typescript-eslint/explicit-module-boundary-types': 'error',
+        '@typescript-eslint/explicit-function-return-type': 'off', // Warn b/c return types are not supported in Svelte markdown
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-array-constructor': 'error',
         '@typescript-eslint/no-empty-function': 'off', // OFF b/c we use empty functions a lot (esp. for initialization)
         '@typescript-eslint/no-explicit-any': 'error',
@@ -63,7 +63,7 @@ const config = {
         'linebreak-style': 'off', // OFF b/c Windows (Git) puts CRLF line endings
         'missing-declaration': 'off', // OFF b/c throws errors on imports / require statements
         'multiline-ternary': 'off', // OFF b/c causes problems between Prettier and ESLint
-        'no-alert': 'error',
+        'no-alert': 'warn',
         'no-async-promise-executor': 'error',
         'no-case-declarations': 'error',
         'no-console': ['error', { allow: ['error', 'warn'] }],

@@ -25,7 +25,7 @@ jobs:
                   registry-url: 'https://registry.npmjs.org'
             - name: Install dependencies
               run: |
-                yarn install --non-interactive
+                  yarn install --non-interactive
             - name: Deploy to Vercel Action
               uses: BetaHuhn/deploy-to-vercel-action@v1
               with:
