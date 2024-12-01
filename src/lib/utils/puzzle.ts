@@ -1,7 +1,7 @@
 import { solvePuzzle } from '.'
 import type { Path } from '../interfaces'
 
-export async function getPuzzlesData(day: number): Promise<Path[]> {
+export async function getPuzzlesData(day: string): Promise<Path[]> {
     try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/puzzles/day${day}.txt`)
         if (!response.ok) {
