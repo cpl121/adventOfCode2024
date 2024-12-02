@@ -40,7 +40,7 @@ export function PuzzleDetails() {
                         <>
                             <h1 className="gold text-4xl">Puzzle {puzzleDetails.day}</h1>
                             <div className="flex flex-col space-y-4">
-                                {puzzleDetails.solutions.map((solution, index) => (
+                                {puzzleDetails?.solutions?.map((solution, index) => (
                                     <span className="text-2xl" key={`Solution-${index}`}>
                                         Solution {index + 1}: {solution}
                                     </span>
@@ -57,7 +57,7 @@ export function PuzzleDetails() {
                                 </a>
                                 <a
                                     className="text-lg"
-                                    href={puzzleDetails.puzzleDataPaths[1].path}
+                                    href={puzzleDetails?.puzzleDataPaths?.[1]?.path}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

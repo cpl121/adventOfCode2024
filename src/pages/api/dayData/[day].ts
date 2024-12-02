@@ -12,7 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             })
         }
         const puzzleDataPaths = await getPuzzlesData(day as string)
-        const pathToSolvePuzzle = puzzleDataPaths[1] ?? puzzleDataPaths[0]
+        const pathToSolvePuzzle = puzzleDataPaths[1].input ? puzzleDataPaths[1] : puzzleDataPaths[0]
         const solutions = resolvePuzzle(Number(day), pathToSolvePuzzle.input)
         res.status(200).json({
             day,
