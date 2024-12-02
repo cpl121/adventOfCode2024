@@ -16,14 +16,14 @@ export function PuzzleDetails() {
         setLoading(true)
         const fetchData = async () => {
             try {
-                const url = window.location.origin;
+                const url = window.location.origin
                 const res = await fetch(`/api/dayData/${selectedDay}`, {
                     method: 'PATCH',
                     headers: {
-                      'Content-Type': 'application/json',
+                        'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({ url }),
-                  });
+                })
                 const data: PuzzleProps = await res.json()
                 setPuzzleDetails(data)
             } catch (error) {
@@ -47,10 +47,10 @@ export function PuzzleDetails() {
                         <>
                             <h1 className="gold text-4xl">Puzzle {puzzleDetails.day}</h1>
                             <div className="flex flex-col space-y-4">
-                                <span className="text-2xl" key={`Solution-1`}>
+                                <span className="text-2xl" key="Solution-1">
                                     Solution 1: {puzzleDetails.solutions?.[0] ?? '--'}
                                 </span>
-                                <span className="text-2xl" key={`Solution-2`}>
+                                <span className="text-2xl" key="Solution-2">
                                     Solution 2: {puzzleDetails.solutions?.[1] ?? '--'}
                                 </span>
                             </div>

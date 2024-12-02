@@ -52,7 +52,12 @@ export default function Home() {
                 <PuzzleDetails />
             </div>
             <span>
-                <a className="border rounded-md px-4 py-2" href={GITHUB_REPOSITORY_URL} target="_blank" rel="noopener noreferrer">
+                <a
+                    className="border rounded-md px-4 py-2"
+                    href={GITHUB_REPOSITORY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Link to my solutions
                 </a>
             </span>

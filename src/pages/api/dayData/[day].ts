@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             })
         }
     } else {
-        res.setHeader('Allow', ['PATCH']);
-        return res.status(405).json({ error: `Method ${req.method} not allowed` });
+        res.setHeader('Allow', ['PATCH'])
+        return res.status(405).json({ error: `Method ${req.method} not allowed` })
     }
 }
