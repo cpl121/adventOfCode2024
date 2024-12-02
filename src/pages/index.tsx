@@ -31,7 +31,7 @@ export default function Home() {
     const isDatePassed = Date.now() < 1735081200000 // 25/12/2024
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center space-y-16">
+        <main className="flex flex-col items-center justify-center space-y-16">
             <div className="snowflakes" aria-hidden="true">
                 {SNOWFLAKES.map((snow, index) => (
                     <div className="snowflake" key={`snow-${index}`}>
@@ -51,11 +51,11 @@ export default function Home() {
                 <AdventCalendar />
                 <PuzzleDetails />
             </div>
-            <p className="border rounded-md px-4 py-2">
-                <a href={GITHUB_REPOSITORY_URL} target="_blank" rel="noopener noreferrer">
+            <span>
+                <a className="border rounded-md px-4 py-2" href={GITHUB_REPOSITORY_URL} target="_blank" rel="noopener noreferrer">
                     Link to my solutions
                 </a>
-            </p>
+            </span>
         </main>
     )
 }
