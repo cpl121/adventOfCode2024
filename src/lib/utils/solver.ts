@@ -1,7 +1,8 @@
-import { puzzle1 } from '@/puzzles'
+import { puzzle1, puzzle2 } from '@/puzzles'
 
 const solvers = {
     1: puzzle1,
+    2: puzzle2,
 }
 
 export function solvePuzzle(id: number, input: string): string[] {

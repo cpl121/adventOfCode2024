@@ -1,13 +1,13 @@
 import { solvePuzzle } from '.'
 import type { Path } from '../interfaces'
 
-export async function getPuzzlesData(day: string): Promise<Path[]> {
+export async function getPuzzlesData(day: string, url: string): Promise<Path[]> {
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/puzzles/day${day}.txt`)
+        const response = await fetch(`${url}/puzzles/day${day}.txt`)
         if (!response.ok) {
             throw new Error(`Failed to fetch puzzle for day ${day}`)
         }
-        const response2 = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/puzzles/day${day}-example.txt`)
+        const response2 = await fetch(`${url}/puzzles/day${day}-example.txt`)
         if (!response.ok) {
             throw new Error(`Failed to fetch puzzle for day ${day}`)
         }
