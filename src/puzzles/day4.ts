@@ -62,7 +62,7 @@ function challenge2(data: string[][]): number {
 }
 
 function nearCharacters(character: string, x: number, y: number, data: string[][]): Orders[] {
-    let ordersFound: Orders[] = []
+    const ordersFound: Orders[] = []
     for (const order of OrdersKeys) {
         switch (order) {
             case Orders.Up:
@@ -103,7 +103,7 @@ function nearCharacters(character: string, x: number, y: number, data: string[][
 }
 
 function crossCharacters(character: string, x: number, y: number, data: string[][]): Orders[] {
-    let ordersFound: Orders[] = []
+    const ordersFound: Orders[] = []
     for (const order of OrdersKeys) {
         switch (order) {
             case Orders.UpR:
