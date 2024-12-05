@@ -11,7 +11,7 @@ enum Orders {
     DownL = 'DownL',
 }
 
-const OrdersKeys = Object.keys(Orders) as (keyof typeof Orders)[];
+const OrdersKeys = Object.keys(Orders) as (keyof typeof Orders)[]
 const DATA_LENGTH = new Map<string, number>()
 
 export function puzzle4(input: string): string[] {
@@ -30,7 +30,7 @@ function challenge1(data: string[][]): number {
             const character = data[index][index_2]
             if (character !== 'X') continue
             const ordersWithM = nearCharacters('M', index, index_2, data)
-            
+
             for (const order of ordersWithM) {
                 if (!coincidence('A', index, index_2, data, order, 2)) continue
                 if (!coincidence('S', index, index_2, data, order, 3)) continue
@@ -78,16 +78,20 @@ function nearCharacters(character: string, x: number, y: number, data: string[][
                 if (hasLimit('Y', y - 1, false) && character === data[x][y - 1]) ordersFound.push(Orders.Left)
                 break
             case Orders.UpR:
-                if (hasLimit('X', x - 1, false) && hasLimit('Y', y + 1, true) && character === data[x - 1][y + 1]) ordersFound.push(Orders.UpR)
+                if (hasLimit('X', x - 1, false) && hasLimit('Y', y + 1, true) && character === data[x - 1][y + 1])
+                    ordersFound.push(Orders.UpR)
                 break
             case Orders.DownR:
-                if (hasLimit('X', x + 1, true) && hasLimit('Y', y + 1, true) && character === data[x + 1][y + 1]) ordersFound.push(Orders.DownR)
+                if (hasLimit('X', x + 1, true) && hasLimit('Y', y + 1, true) && character === data[x + 1][y + 1])
+                    ordersFound.push(Orders.DownR)
                 break
             case Orders.UpL:
-                if (hasLimit('X', x - 1, false) && hasLimit('Y', y - 1, false) && character === data[x - 1][y - 1]) ordersFound.push(Orders.UpL)
+                if (hasLimit('X', x - 1, false) && hasLimit('Y', y - 1, false) && character === data[x - 1][y - 1])
+                    ordersFound.push(Orders.UpL)
                 break
             case Orders.DownL:
-                if (hasLimit('X', x + 1, true) && hasLimit('Y', y - 1, false) && character === data[x + 1][y - 1]) ordersFound.push(Orders.DownL)
+                if (hasLimit('X', x + 1, true) && hasLimit('Y', y - 1, false) && character === data[x + 1][y - 1])
+                    ordersFound.push(Orders.DownL)
                 break
 
             default:
@@ -103,16 +107,20 @@ function crossCharacters(character: string, x: number, y: number, data: string[]
     for (const order of OrdersKeys) {
         switch (order) {
             case Orders.UpR:
-                if (hasLimit('X', x - 1, false) && hasLimit('Y', y + 1, true) && character === data[x - 1][y + 1]) ordersFound.push(Orders.UpR)
+                if (hasLimit('X', x - 1, false) && hasLimit('Y', y + 1, true) && character === data[x - 1][y + 1])
+                    ordersFound.push(Orders.UpR)
                 break
             case Orders.DownR:
-                if (hasLimit('X', x + 1, true) && hasLimit('Y', y + 1, true) && character === data[x + 1][y + 1]) ordersFound.push(Orders.DownR)
+                if (hasLimit('X', x + 1, true) && hasLimit('Y', y + 1, true) && character === data[x + 1][y + 1])
+                    ordersFound.push(Orders.DownR)
                 break
             case Orders.UpL:
-                if (hasLimit('X', x - 1, false) && hasLimit('Y', y - 1, false) && character === data[x - 1][y - 1]) ordersFound.push(Orders.UpL)
+                if (hasLimit('X', x - 1, false) && hasLimit('Y', y - 1, false) && character === data[x - 1][y - 1])
+                    ordersFound.push(Orders.UpL)
                 break
             case Orders.DownL:
-                if (hasLimit('X', x + 1, true) && hasLimit('Y', y - 1, false) && character === data[x + 1][y - 1]) ordersFound.push(Orders.DownL)
+                if (hasLimit('X', x + 1, true) && hasLimit('Y', y - 1, false) && character === data[x + 1][y - 1])
+                    ordersFound.push(Orders.DownL)
                 break
 
             default:
@@ -149,16 +157,20 @@ function coincidence(character: string, x: number, y: number, data: string[][], 
             if (hasLimit('Y', y - level, false)) wordToCompare = data[x][y - level] ?? ''
             break
         case Orders.UpR:
-            if (hasLimit('X', x - level, false) && hasLimit('Y', y + level, true)) wordToCompare = data[x - level][y + level] ?? ''
+            if (hasLimit('X', x - level, false) && hasLimit('Y', y + level, true))
+                wordToCompare = data[x - level][y + level] ?? ''
             break
         case Orders.DownR:
-            if (hasLimit('X', x + level, true) && hasLimit('Y', y + level, true)) wordToCompare = data[x + level][y + level] ?? ''
+            if (hasLimit('X', x + level, true) && hasLimit('Y', y + level, true))
+                wordToCompare = data[x + level][y + level] ?? ''
             break
         case Orders.UpL:
-            if (hasLimit('X', x - level, false) && hasLimit('Y', y - level, false)) wordToCompare = data[x - level][y - level] ?? ''
+            if (hasLimit('X', x - level, false) && hasLimit('Y', y - level, false))
+                wordToCompare = data[x - level][y - level] ?? ''
             break
         case Orders.DownL:
-            if (hasLimit('X', x + level, true) && hasLimit('Y', y - level, false)) wordToCompare = data[x + level][y - level] ?? ''
+            if (hasLimit('X', x + level, true) && hasLimit('Y', y - level, false))
+                wordToCompare = data[x + level][y - level] ?? ''
             break
 
         default:
